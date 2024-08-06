@@ -8,12 +8,12 @@ import {
   BsFillGearFill,
 } from "react-icons/bs";
 
-function header({ OpenSidebar }) {
+function Header() {
   return (
     <>
       <header className="header">
         <div className="menu-icon">
-          <BsJustify className="icon" onClick={OpenSidebar} />
+          <BsJustify className="icon" />
         </div>
         <div className="header-left">
           <BsSearch className="search-icon" />
@@ -31,4 +31,4 @@ function header({ OpenSidebar }) {
   );
 }
 
-export default header;
+export default Header;

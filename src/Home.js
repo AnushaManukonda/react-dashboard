@@ -1,27 +1,23 @@
 import React from "react";
 import profileicon from "../src/assets/profileicon.png";
 import {
-  BsTriangleFill,
   BsCaretDownFill,
   BsFillArchiveFill,
   BsChevronRight,
-  BsFilePersonFill,
-  BsFillStarFill,
-  BsStar,
 } from "react-icons/bs";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
-  LineChart,
-  Line,
 } from "recharts";
+import CardItem from "./components/CardItem";
+import Ratings from "./components/Ratings";
+import ordersList from "../src/const/ordersList.json";
 function Home() {
   const data = [
     {
@@ -119,58 +115,31 @@ function Home() {
         </div>
 
         <div className="main-cards">
-          <div className="card">
-            <div className="card-inner">
-              <BsFillArchiveFill className="card_icon" />
-              <h3>Total Orders</h3>
-            </div>
-            <div className="num-percentage">
-              <h1>75</h1>
-              <div className="icon-percentage">
-                <BsTriangleFill className="icon" />
-                <p>3%</p>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-inner">
-              <BsFillArchiveFill className="card_icon" />
-              <h3>Total Delivered</h3>
-            </div>
-            <div className="num-percentage">
-              <h1>70</h1>
-              <div className="icon-percentage2">
-                <BsCaretDownFill className="icon" />
-                <p>3%</p>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-inner">
-              <BsFillArchiveFill className="card_icon" />
-              <h3>Total Cancelled</h3>
-            </div>
-            <div className="num-percentage">
-              <h1>05</h1>
-              <div className="icon-percentage">
-                <BsTriangleFill className="icon" />
-                <p>3%</p>
-              </div>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-inner">
-              <BsFillArchiveFill className="card_icon" />
-              <h3>Total Revenue</h3>
-            </div>
-            <div className="num-percentage">
-              <h1>$12k</h1>
-              <div className="icon-percentage2">
-                <BsCaretDownFill className="icon" />
-                <p>3%</p>
-              </div>
-            </div>
-          </div>
+          <CardItem
+            title={"Total Orders"}
+            number={"75"}
+            percentage={"3%"}
+            trend={"up"}
+          />
+          <CardItem
+            title={"Total Delivered"}
+            number={"70"}
+            percentage={"3%"}
+            trend={"down"}
+          />
+          <CardItem
+            title={"Total Cancelled"}
+            number={"05"}
+            percentage={"3%"}
+            trend={"up"}
+          />
+          <CardItem
+            title={"Total Revenue"}
+            number={"$12k"}
+            percentage={"3%"}
+            trend={"down"}
+          />
+
           <div className="card">
             <div className="card-inner">
               <p>Net Profit</p>
@@ -259,182 +228,41 @@ function Home() {
           </div>
 
           <div className="order-section">
-            <ResponsiveContainer width="100%" height="100%">
-              <div>
-                <h3>Recent Orders</h3>
-                <table className="orders-table">
-                  <thead>
-                    <tr>
-                      <th>Customer</th>
-                      <th>Order No.</th>
-                      <th>Amount</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
+            <h3>Recent Orders</h3>
+            <table className="orders-table">
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Order No.</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ordersList.map((order, index) => {
+                  return (
+                    <tr key={"order" + index}>
                       <td>
                         <img
                           src={profileicon}
                           alt="Profile Icon"
                           className="profile-icon"
                         />
-                        <i class="person-circle"></i> Wade Warren
+                        <i class="person-circle"></i> {order.customer_name}
                       </td>
-                      <td>15478256</td>
-                      <td>$124.00</td>
+                      <td>{order.order_no}</td>
+                      <td>{order.amount}</td>
                       <td>
-                        <span class="delivery-status">Delivered</span>
+                        <span class="delivery-status">{order.status}</span>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Jane Cooper
-                      </td>
-                      <td>49896798</td>
-                      <td>$305.02</td>
-                      <td>
-                        <span class="delivery-status">Delivered</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Guy Hawkins
-                      </td>
-                      <td>78095215</td>
-                      <td>$45.88</td>
-                      <td>
-                        <span class="delivery-status">Cancelled</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Kristin Watson
-                      </td>
-                      <td>20965732</td>
-                      <td>$65.00</td>
-                      <td>
-                        <span class="delivery-status">Pending</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Cody Fisher
-                      </td>
-                      <td>95715620</td>
-                      <td>$745.00</td>
-                      <td>
-                        <span class="delivery-status">Delivered</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Savannah Nguyen
-                      </td>
-                      <td>78514568</td>
-                      <td>$128.20</td>
-                      <td>
-                        <span class="delivery-status">Delivered</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </ResponsiveContainer>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
-          <div className="star-rating">
-            <ResponsiveContainer width="100%" height="100%">
-              {/* <div> */}
-              <h3>customer feed back</h3>
-              <div className="feedback-1">
-                <div className="profile-name">
-                  <img
-                    src={profileicon}
-                    alt="Profile Icon"
-                    className="profile-icon"
-                  />
-                  <h6>Jenni wilson</h6>
-                </div>
-                <div className="stars">
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsStar className="last-star" />
-                </div>
-                <p>
-                  The food was not only hot and fresh but also packed securely
-                  to maintain its quality. The dishes were bursting with flavor
-                  and clearly made with high-quality ingredients
-                </p>
-              </div>
-              <div className="feedback-1">
-                <div className="profile-name">
-                  <BsFilePersonFill />
-                  <h6>Jenni wilson</h6>
-                </div>
-                <div className="stars">
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                </div>
-                <p>
-                  The delivery was impressively prompt, arriving well within the
-                  estimated time frame
-                </p>
-              </div>
-              <div className="feedback-1">
-                <div className="profile-name">
-                  <BsFilePersonFill />
-                  <h6>Jenni wilson</h6>
-                </div>
-                <div className="stars">
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsFillStarFill />
-                  <BsStar className="last-star" />
-                </div>
-                <p>Delivered with a smile and amazing flavor!</p>
-              </div>
-              {/* </div> */}
-            </ResponsiveContainer>
-          </div>
+          <Ratings />
         </div>
-        {/* second section...... */}
-        {/* <div className="activity">
-          <p>activity</p>
-          <button>weekly</button>
-        </div> */}
-        {/*  order section  */}
-        <div className="orders"></div>
       </main>
     </>
   );

@@ -6,52 +6,55 @@ import {
   BsJournalCheck,
   BsPeopleFill,
   BsListCheck,
-  BsMenuButtonWideFill,
-  BsFillGearFill,
 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-function Sidebar({ openSidebarToggle, OpenSidebar }) {
+const sidebarItems = [
+  {
+    icon: <BsFillHouseDoorFill className="icon" />,
+    link: "/",
+    key: "item-1",
+  },
+  {
+    icon: <BsReception3 className="icon" />,
+    link: "/",
+    key: "item-1",
+  },
+  {
+    icon: <BsJournalCheck className="icon" />,
+    link: "/",
+    key: "item-1",
+  },
+  {
+    icon: <BsPeopleFill className="icon" />,
+    link: "/",
+    key: "item-1",
+  },
+  {
+    icon: <BsListCheck className="icon" />,
+    link: "/",
+    key: "item-1",
+  },
+];
+
+function Sidebar() {
   return (
     <>
-      <aside
-        id="sidebar"
-        className={openSidebarToggle ? "sidebar-responsive" : ""}
-      >
+      <aside id="sidebar">
         <div className="sidebar-title">
           <div className="sidebar-brand">
             <BsGrid className="icon_header" />
           </div>
-          {/* <span className="icon close_icon" onClick={OpenSidebar}>
-            X
-          </span> */}
         </div>
 
         <ul className="sidebar-list">
-          <li className="sidebar-list-item">
-            <a href="">
-              <BsFillHouseDoorFill className="icon" />
-            </a>
-          </li>
-          <li className="sidebar-list-item">
-            <a href="">
-              <BsReception3 className="icon" />
-            </a>
-          </li>
-          <li className="sidebar-list-item">
-            <a href="">
-              <BsJournalCheck className="icon" />
-            </a>
-          </li>
-          <li className="sidebar-list-item">
-            <a href="">
-              <BsPeopleFill className="icon" />
-            </a>
-          </li>
-          <li className="sidebar-list-item">
-            <a href="">
-              <BsListCheck className="icon" />
-            </a>
-          </li>
+          {sidebarItems.map((item, index) => {
+            return (
+              <li key={"item-" + index} className="sidebar-list-item">
+                <Link to={item.link}>{item.icon}</Link>
+              </li>
+            );
+          })}
         </ul>
       </aside>
     </>

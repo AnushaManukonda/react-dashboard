@@ -1,18 +1,17 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
 import Home from "./Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <>
-      <div className="grid-container">
-        <Header />
-        <Sidebar />
-        <Home />
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
