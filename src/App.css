@@ -192,6 +192,12 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+.icon-size {
+  width: 50px;
+  height: 50px;
+}
+
 .num-percentage {
   display: flex;
   align-items: center;
@@ -232,6 +238,11 @@ body {
   font-size: 25px;
 }
 
+.circle-icon {
+  height: 20%;
+  width: 20%;
+}
+
 .charts {
   display: grid;
   grid-template-columns: 4fr 2fr;
@@ -258,7 +269,7 @@ body {
   justify-content: space-between;
 }
 .goal-text {
-  margin-left: auto;
+  margin-left: 10px;
 }
 
 /* End Main  */
@@ -278,15 +289,57 @@ body {
 tr,
 td {
   text-align: left;
-  padding: 15px 15px 15px 15px;
+  padding: 1px 1px 1px 1px;
   border-bottom: 0.7px solid rgb(197, 197, 197);
 }
-/* th{
-  background-color: rgb(246, 246, 246);
-  padding: 8px;
-} */
+.customer-name {
+  margin-left: 10px;
+}
+
 table {
   width: -webkit-fill-available;
+}
+th:nth-child(1) {
+  width: 50%;
+}
+
+th:nth-child(2),
+th:nth-child(3),
+th:nth-child(4) {
+  text-align: center;
+}
+
+tr td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4) {
+  text-align: center;
+}
+.delivery-status-delivered {
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  background-color: rgb(121, 200, 121);
+  margin: 5px 0;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.delivery-status-cancelled {
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  background-color: rgb(195, 86, 86);
+  margin: 5px 0;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.delivery-status-pending {
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  background-color: rgb(226, 135, 82);
+  margin: 5px 0;
+  padding: 5px 10px;
+  font-size: 12px;
 }
 .profile-icon {
   width: 5%;
@@ -310,6 +363,11 @@ table {
 }
 .feedback-1 {
   border-bottom: 0.7px solid rgb(197, 197, 197);
+}
+.review {
+  font-size: 14px;
+  color: whitesmoke;
+  margin: 7px 0px;
 }
 
 /* responsiv */
@@ -345,6 +403,15 @@ table {
     /* grid-template-columns: repeat(2, 1fr);
     gap: 10px; */
     margin-bottom: 0;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .profile-icon {
+    width: 15%;
+    height: 15%;
   }
 
   .graph-sec {

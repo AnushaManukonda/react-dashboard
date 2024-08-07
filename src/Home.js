@@ -18,19 +18,33 @@ import {
 import CardItem from "./components/CardItem";
 import Ratings from "./components/Ratings";
 import ordersList from "../src/const/ordersList.json";
+import {
+  FcDoughnutChart,
+  FcAutomatic,
+  FcPodiumWithAudience,
+  FcPackage,
+  FcCurrencyExchange,
+  FcDeleteColumn,
+  FcShipped,
+  FcDataRecovery,
+} from "react-icons/fc";
 function Home() {
   const data = [
     {
       name: "5",
       uv: 4000,
+      uv: 5000,
       pv: 2400,
       mv: 2200,
+      mv: 2500,
       amt: 2400,
     },
     {
       name: "9",
       uv: 3000,
       pv: 1398,
+      uv: 4000,
+      pv: 2498,
       mv: 2100,
       amt: 2210,
     },
@@ -120,24 +134,28 @@ function Home() {
             number={"75"}
             percentage={"3%"}
             trend={"up"}
+            icon={<FcDataRecovery className="icon-size" />}
           />
           <CardItem
             title={"Total Delivered"}
             number={"70"}
             percentage={"3%"}
             trend={"down"}
+            icon={<FcShipped className="icon-size" />}
           />
           <CardItem
             title={"Total Cancelled"}
             number={"05"}
             percentage={"3%"}
             trend={"up"}
+            icon={<FcDeleteColumn className="icon-size" />}
           />
           <CardItem
             title={"Total Revenue"}
             number={"$12k"}
             percentage={"3%"}
             trend={"down"}
+            icon={<FcCurrencyExchange className="icon-size" />}
           />
 
           <div className="card">
@@ -145,7 +163,7 @@ function Home() {
               <p>Net Profit</p>
               <div className="heading-icon">
                 <h3>$6759.25</h3>
-                <BsFillArchiveFill className="card_icon" />
+                <FcDoughnutChart className="circle-icon" />
               </div>
             </div>
             <div className="num-percentage3">
@@ -204,22 +222,22 @@ function Home() {
               <div className="card">
                 <div className="card-goal">
                   <div className="goals-icon">
-                    <BsFillArchiveFill className="card_icon" />
+                    <FcAutomatic className="icon-size" />
                     <p className="goal-text">Goals</p>
                   </div>
                   <BsChevronRight className="icon" />
                 </div>
                 <div className="card-goal">
                   <div className="goals-icon">
-                    <BsFillArchiveFill className="card_icon" />
-                    <p>Popular Dishes</p>
+                    <FcPodiumWithAudience className="icon-size" />
+                    <p className="goal-text">Popular Dishes</p>
                   </div>
                   <BsChevronRight className="icon" />
                 </div>
                 <div className="card-goal">
                   <div className="goals-icon">
-                    <BsFillArchiveFill className="card_icon" />
-                    <p>Menus</p>
+                    <FcPackage className="icon-size" />
+                    <p className="goal-text">Menus</p>
                   </div>
                   <BsChevronRight className="icon" />
                 </div>
@@ -243,17 +261,28 @@ function Home() {
                   return (
                     <tr key={"order" + index}>
                       <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> {order.customer_name}
+                        <div className="profile-name">
+                          <img
+                            src={profileicon}
+                            alt="Profile Icon"
+                            className="profile-icon"
+                          />
+                          <p className="customer-name">
+                            {" "}
+                            {order.customer_name}
+                          </p>
+                        </div>
                       </td>
                       <td>{order.order_no}</td>
                       <td>{order.amount}</td>
                       <td>
-                        <span class="delivery-status">{order.status}</span>
+                        <span
+                          className={
+                            "delivery-status-" + order.status.toLowerCase()
+                          }
+                        >
+                          {order.status}
+                        </span>
                       </td>
                     </tr>
                   );
