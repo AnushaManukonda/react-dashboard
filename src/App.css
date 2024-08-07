@@ -184,9 +184,12 @@ body {
 }
 
 .card-inner {
-  /* display: flex; */
   align-items: center;
   justify-content: space-between;
+}
+.icon-size{
+  width: 50px;
+  height: 50px;
 }
 .num-percentage{
   display: flex;
@@ -227,6 +230,11 @@ body {
 .card-inner > .card_icon {
   font-size: 25px;
 }
+.circle-icon{
+  height: 20%;
+  width: 20%;
+}
+
 
 .charts {
   display: grid;
@@ -256,9 +264,9 @@ body {
 
  }
  .goal-text{
-  margin-left: auto;
+  margin-left: 10px;
  }
-
+ 
 /* End Main  */
 .orders{
   display: grid;
@@ -275,15 +283,33 @@ body {
 }
 tr,td {
   text-align: left;
-  padding: 15px 15px 15px 15px;
+  padding: 1px 1px 1px 1px;
   border-bottom: 0.7px solid rgb(197, 197, 197);
 }
-/* th{
-  background-color: rgb(246, 246, 246);
-  padding: 8px;
-} */
+.customer-name{
+  margin-left: 10px;
+}
+
 table{
   width: -webkit-fill-available;
+}
+.delivery-status1{
+  border-radius: 20px;
+    color: white;
+    text-align: center;
+    background-color: rgb(121, 200, 121);
+    margin: 5px 0;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.delivery-status2{
+  border-radius: 20px;
+    color: white;
+    text-align: center;
+    background-color: rgb(195, 86, 86);
+    margin: 5px 0;
+    padding: 5px 10px;
+    font-size: 12px;
 }
 .profile-icon{
   width: 5%;
@@ -298,6 +324,7 @@ table{
 .profile-name{
   display: flex;
   align-items: center;
+  
 }
 .stars{
   display: flex;
@@ -309,12 +336,11 @@ table{
 .feedback-1{
   border-bottom: 0.7px solid rgb(197, 197, 197);
 }
-
-
-
-
-
-
+.review{
+  font-size: 14px;
+ color: whitesmoke;
+ margin: 7px 0px;
+}
 
 
 

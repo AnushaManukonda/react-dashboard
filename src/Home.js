@@ -1,6 +1,16 @@
 import React from "react";
 import profileicon from "../src/assets/profileicon.png";
 import {
+  FcDoughnutChart,
+  FcAutomatic,
+  FcPodiumWithAudience,
+  FcPackage,
+  FcCurrencyExchange,
+  FcDeleteColumn,
+  FcShipped,
+  FcDataRecovery,
+} from "react-icons/fc";
+import {
   BsTriangleFill,
   BsCaretDownFill,
   BsFillArchiveFill,
@@ -26,15 +36,15 @@ function Home() {
   const data = [
     {
       name: "5",
-      uv: 4000,
+      uv: 5000,
       pv: 2400,
-      mv: 2200,
+      mv: 2500,
       amt: 2400,
     },
     {
       name: "9",
-      uv: 3000,
-      pv: 1398,
+      uv: 4000,
+      pv: 2498,
       mv: 2100,
       amt: 2210,
     },
@@ -121,8 +131,8 @@ function Home() {
         <div className="main-cards">
           <div className="card">
             <div className="card-inner">
-              <BsFillArchiveFill className="card_icon" />
-              <h3>Total Orders</h3>
+              <FcDataRecovery className="icon-size" />
+              <p>Total Orders</p>
             </div>
             <div className="num-percentage">
               <h1>75</h1>
@@ -134,8 +144,8 @@ function Home() {
           </div>
           <div className="card">
             <div className="card-inner">
-              <BsFillArchiveFill className="card_icon" />
-              <h3>Total Delivered</h3>
+              <FcShipped className="icon-size" />
+              <p>Total Delivered</p>
             </div>
             <div className="num-percentage">
               <h1>70</h1>
@@ -147,8 +157,8 @@ function Home() {
           </div>
           <div className="card">
             <div className="card-inner">
-              <BsFillArchiveFill className="card_icon" />
-              <h3>Total Cancelled</h3>
+              <FcDeleteColumn className="icon-size" />
+              <p>Total Cancelled</p>
             </div>
             <div className="num-percentage">
               <h1>05</h1>
@@ -160,8 +170,8 @@ function Home() {
           </div>
           <div className="card">
             <div className="card-inner">
-              <BsFillArchiveFill className="card_icon" />
-              <h3>Total Revenue</h3>
+              <FcCurrencyExchange className="icon-size" />
+              <p>Total Revenue</p>
             </div>
             <div className="num-percentage">
               <h1>$12k</h1>
@@ -176,7 +186,7 @@ function Home() {
               <p>Net Profit</p>
               <div className="heading-icon">
                 <h3>$6759.25</h3>
-                <BsFillArchiveFill className="card_icon" />
+                <FcDoughnutChart className="circle-icon" />
               </div>
             </div>
             <div className="num-percentage3">
@@ -190,6 +200,10 @@ function Home() {
             </div>
           </div>
 
+          {/* <div className="activity">
+            <p>activity</p>
+            <button>weekly</button>
+          </div> */}
           <div className="graph-sec">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
@@ -235,22 +249,22 @@ function Home() {
               <div className="card">
                 <div className="card-goal">
                   <div className="goals-icon">
-                    <BsFillArchiveFill className="card_icon" />
+                    <FcAutomatic className="icon-size" />
                     <p className="goal-text">Goals</p>
                   </div>
                   <BsChevronRight className="icon" />
                 </div>
                 <div className="card-goal">
                   <div className="goals-icon">
-                    <BsFillArchiveFill className="card_icon" />
-                    <p>Popular Dishes</p>
+                    <FcPodiumWithAudience className="icon-size" />
+                    <p className="goal-text">Popular Dishes</p>
                   </div>
                   <BsChevronRight className="icon" />
                 </div>
                 <div className="card-goal">
                   <div className="goals-icon">
-                    <BsFillArchiveFill className="card_icon" />
-                    <p>Menus</p>
+                    <FcPackage className="icon-size" />
+                    <p className="goal-text">Menus</p>
                   </div>
                   <BsChevronRight className="icon" />
                 </div>
@@ -274,92 +288,104 @@ function Home() {
                   <tbody>
                     <tr>
                       <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Wade Warren
+                        <div className="profile-name">
+                          <img
+                            src={profileicon}
+                            alt="Profile Icon"
+                            className="profile-icon"
+                          />
+                          <p className="customer-name"> Wade Warren</p>
+                        </div>
                       </td>
                       <td>15478256</td>
                       <td>$124.00</td>
                       <td>
-                        <span class="delivery-status">Delivered</span>
+                        <span class="delivery-status1">Delivered</span>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Jane Cooper
+                        <div className="profile-name">
+                          <img
+                            src={profileicon}
+                            alt="Profile Icon"
+                            className="profile-icon"
+                          />
+                          <p className="customer-name">Jane Cooper</p>
+                        </div>
                       </td>
                       <td>49896798</td>
                       <td>$305.02</td>
                       <td>
-                        <span class="delivery-status">Delivered</span>
+                        <span class="delivery-status1">Delivered</span>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Guy Hawkins
+                        <div className="profile-name">
+                          <img
+                            src={profileicon}
+                            alt="Profile Icon"
+                            className="profile-icon"
+                          />
+                          <p className="customer-name"> Guy Hawkins</p>
+                        </div>
                       </td>
                       <td>78095215</td>
                       <td>$45.88</td>
                       <td>
-                        <span class="delivery-status">Cancelled</span>
+                        <span class="delivery-status2">Cancelled</span>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Kristin Watson
+                        <div className="profile-name">
+                          <img
+                            src={profileicon}
+                            alt="Profile Icon"
+                            className="profile-icon"
+                          />
+                          <p className="customer-name">Kristin Watson</p>
+                        </div>
                       </td>
                       <td>20965732</td>
                       <td>$65.00</td>
                       <td>
-                        <span class="delivery-status">Pending</span>
+                        <span class="delivery-status2">Pending</span>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Cody Fisher
+                        <div className="profile-name">
+                          <img
+                            src={profileicon}
+                            alt="Profile Icon"
+                            className="profile-icon"
+                          />
+                          <p className="customer-name"> Cody Fisher</p>
+                        </div>
                       </td>
                       <td>95715620</td>
                       <td>$745.00</td>
                       <td>
-                        <span class="delivery-status">Delivered</span>
+                        <span class="delivery-status1">Delivered</span>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <img
-                          src={profileicon}
-                          alt="Profile Icon"
-                          className="profile-icon"
-                        />
-                        <i class="person-circle"></i> Savannah Nguyen
+                        <div className="profile-name">
+                          <img
+                            src={profileicon}
+                            alt="Profile Icon"
+                            className="profile-icon"
+                          />
+                          <p className="customer-name">Savannah Nguyen</p>
+                        </div>
                       </td>
                       <td>78514568</td>
                       <td>$128.20</td>
                       <td>
-                        <span class="delivery-status">Delivered</span>
+                        <span class="delivery-status1">Delivered</span>
                       </td>
                     </tr>
                   </tbody>
@@ -370,7 +396,7 @@ function Home() {
           <div className="star-rating">
             <ResponsiveContainer width="100%" height="100%">
               {/* <div> */}
-              <h3>customer feed back</h3>
+              <h3>customer's Feedback</h3>
               <div className="feedback-1">
                 <div className="profile-name">
                   <img
@@ -378,7 +404,7 @@ function Home() {
                     alt="Profile Icon"
                     className="profile-icon"
                   />
-                  <h6>Jenni wilson</h6>
+                  <h5 className="customer-name">Jenni wilson</h5>
                 </div>
                 <div className="stars">
                   <BsFillStarFill />
@@ -387,7 +413,7 @@ function Home() {
                   <BsFillStarFill />
                   <BsStar className="last-star" />
                 </div>
-                <p>
+                <p className="review">
                   The food was not only hot and fresh but also packed securely
                   to maintain its quality. The dishes were bursting with flavor
                   and clearly made with high-quality ingredients
@@ -395,8 +421,12 @@ function Home() {
               </div>
               <div className="feedback-1">
                 <div className="profile-name">
-                  <BsFilePersonFill />
-                  <h6>Jenni wilson</h6>
+                  <img
+                    src={profileicon}
+                    alt="Profile Icon"
+                    className="profile-icon"
+                  />
+                  <h5 className="customer-name">Jenni wilson</h5>
                 </div>
                 <div className="stars">
                   <BsFillStarFill />
@@ -405,15 +435,19 @@ function Home() {
                   <BsFillStarFill />
                   <BsFillStarFill />
                 </div>
-                <p>
+                <p className="review">
                   The delivery was impressively prompt, arriving well within the
                   estimated time frame
                 </p>
               </div>
               <div className="feedback-1">
                 <div className="profile-name">
-                  <BsFilePersonFill />
-                  <h6>Jenni wilson</h6>
+                  <img
+                    src={profileicon}
+                    alt="Profile Icon"
+                    className="profile-icon"
+                  />
+                  <h5 className="customer-name">Jenni wilson</h5>
                 </div>
                 <div className="stars">
                   <BsFillStarFill />
@@ -422,18 +456,15 @@ function Home() {
                   <BsFillStarFill />
                   <BsStar className="last-star" />
                 </div>
-                <p>Delivered with a smile and amazing flavor!</p>
+                <p className="review">
+                  Delivered with a smile and amazing flavor!
+                </p>
               </div>
               {/* </div> */}
             </ResponsiveContainer>
           </div>
         </div>
-        {/* second section...... */}
-        {/* <div className="activity">
-          <p>activity</p>
-          <button>weekly</button>
-        </div> */}
-        {/*  order section  */}
+
         <div className="orders"></div>
       </main>
     </>
