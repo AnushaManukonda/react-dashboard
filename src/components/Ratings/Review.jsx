@@ -17,8 +17,12 @@ export default function Review({ person_name, review_desc, ratings = 1, key }) {
     <>
       <div className="feedback-1" key={key}>
         <div className="profile-name">
-          <img src={profileicon} alt="Profile Icon" className="profile-icon" />
-          <h6>{person_name}</h6>
+          <img
+            src={profileicon}
+            alt="Profile Icon"
+            className="profile-icon-review"
+          />
+          <h5 className="customer-name">{person_name}</h5>
         </div>
         <div className="stars">{items}</div>
         <p>{review_desc}</p>

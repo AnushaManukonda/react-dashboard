@@ -293,7 +293,7 @@ td {
   border-bottom: 0.7px solid rgb(197, 197, 197);
 }
 .customer-name {
-  margin-left: 10px;
+  margin: 0 0 0 10px;
 }
 
 table {
@@ -332,6 +332,10 @@ td:nth-child(4) {
   padding: 5px 10px;
   font-size: 12px;
 }
+.profile-icon-review {
+  width: 6%;
+  height: 6%;
+}
 .delivery-status-pending {
   border-radius: 20px;
   color: white;
@@ -353,6 +357,7 @@ td:nth-child(4) {
 .profile-name {
   display: flex;
   align-items: center;
+  padding: 10px 0;
 }
 .stars {
   display: flex;
@@ -413,6 +418,10 @@ td:nth-child(4) {
     width: 15%;
     height: 15%;
   }
+  .profile-icon-review {
+    width: 6%;
+    height: 6%;
+  }
 
   .graph-sec {
     height: 20vh;
@@ -443,5 +452,16 @@ td:nth-child(4) {
 @media screen and (max-width: 576px) {
   .hedaer-left {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-left input {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .search-icon {
+    font-size: 15px;
   }
 }
