@@ -242,6 +242,7 @@ body {
   background-color: #263043;
   border-radius: 5px;
   grid-column: span 4;
+  padding: 20px 10px;
 }
 /* .activity{
   display: flex;
@@ -344,6 +345,11 @@ table {
     /* grid-template-columns: repeat(2, 1fr);
     gap: 10px; */
     margin-bottom: 0;
+  }
+
+  .graph-sec {
+    height: 20vh;
+    padding: 10px 5px;
   }
 
   .header {
